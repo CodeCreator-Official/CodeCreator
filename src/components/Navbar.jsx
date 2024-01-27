@@ -23,20 +23,8 @@ function Navbar() {
             <h1 className="font-semibold text-xl text-gray-700 dark:text-gray-200">CodeCreator</h1>
 
             <div className="flex items-center">
-                <button className="text-md border-[1px] hover:bg-gray-300 dark:bg-gray-300 text-gray-900 rounded-md py-2 px-3 font-semibold duration-200 dark:hover:bg-gray-400 my-2">About Me</button>
+                <button className="text-md border-[1px] hover:bg-gray-200 dark:bg-gray-200 text-gray-900 rounded-md py-2 px-3 font-semibold duration-200 dark:hover:bg-gray-300 my-2">About</button>
 
-                {/* <button
-                    onClick={() => {
-                        setToggle(!toggle)
-                        ToggleDarkMode()
-                    }}
-                    className="w-[3.6rem] ml-4 h-8 rounded-full border-[1px] bg-white flex dark:bg-slate-900 dark:border-gray-500 items-center transition duration-300 focus:outline-none"
-                >
-                    <div
-                        id="switch-toggle"
-                        className={`w-6 h-6 relative rounded-full transition duration-500 transform m-1 bg-yellow-400 ${toggle ? 'translate-x-6' : 'translate-x-0'}  p-1 text-black bg-[url('https://cdn2.iconfinder.com/data/icons/solar-energy-3/200/969-512.png')] bg-cover grayscale invert`}>
-                    </div>
-                </button> */}
 
                 <button className="text-3xl pl-3" onClick={() => {
                     setToggle(!toggle)
