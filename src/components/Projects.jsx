@@ -20,7 +20,7 @@ function Projects() {
         fetchProjects()
     }, [])
 
-    console.log(data.map(doc => {console.log(data.url)})
+    console.log(data.map(doc => {return (data.url)})
 
 
 
