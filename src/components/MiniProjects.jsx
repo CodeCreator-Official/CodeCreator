@@ -20,8 +20,6 @@ function MiniProjects() {
         fetchMiniProjects()
     }, [])
 
-    console.log(data)
-
     return (
         <div className="my-2 w-full">
             <h1 className="text-purple-500 text-center sm:text-start font-bold text-xl font-mono">Mini Projects</h1>
