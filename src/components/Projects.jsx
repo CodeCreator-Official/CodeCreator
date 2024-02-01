@@ -14,11 +14,12 @@ function Projects() {
             console.log(error)
         }
     }
- 
 
     useEffect(() => {
         fetchProjects()
     }, [])
+
+    data.map(doc => console.log(doc))
 
 
     return (
