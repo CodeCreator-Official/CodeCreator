@@ -1,35 +1,38 @@
 /* eslint-disable no-unused-vars */
-import { doc, getDoc, getFirestore } from 'firebase/firestore'
+import { collection, doc, getDocs, getFirestore } from 'firebase/firestore'
 import app from './config.js'
 
 const db = getFirestore(app)
 
 async function getProjects() {
     try {
-        
-        const docRef = doc(db, 'PortFolio', 'My Projects')
-        const docSnap = await getDoc(docRef);
 
-        if(docSnap.exists()){
-            return Object.entries(docSnap.data())
-        }
-        return null
+        const docRef = collection(db, 'Projects')
+        const docSnap = await getDocs(docRef);
+
+        if (!docSnap) { return null }
+
+        return docSnap.docs.map(doc => {
+            return (doc.data())
+        })
 
     } catch (error) {
         console.log(error.message)
     }
 }
 
+getProjects()
+
 async function getMiniProjects() {
     try {
-        
-        const docRef = doc(db, 'PortFolio', 'Mini Projects')
-        const docSnap = await getDoc(docRef);
+        const docRef = collection(db, 'Mini Projects')
+        const docSnap = await getDocs(docRef);
 
-        if(docSnap.exists()){
-            return Object.entries(docSnap.data())
-        }
-        return null
+        if (!docSnap) { return null }
+
+        return docSnap.docs.map(doc => {
+            return (doc.data())
+        })
 
     } catch (error) {
         console.log(error.message)

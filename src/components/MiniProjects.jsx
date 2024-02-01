@@ -6,15 +6,21 @@ function MiniProjects() {
 
     const [data, setdata] = useState([])
 
+    async function fetchMiniProjects() {
+        try {
+            const data = await getMiniProjects()
+            setdata(data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
     useEffect(() => {
-        getMiniProjects()
-            .then((item) => {
-                setdata(
-                    [...item]
-                )
-            })
+        fetchMiniProjects()
     }, [])
+
+    console.log(data)
 
     return (
         <div className="my-2 w-full">
@@ -22,15 +28,15 @@ function MiniProjects() {
 
             <ul className="my-3 py-5 flex flex-wrap gap-5 w-full max-w-[70rem] justify-center sm:justify-start">
                 {
-                    !data.length > 0 ?
+                    data.length > 0 ?
                         (<>
                             {
                                 data.map((project) => (
-                                    <li key={project[0]} className="w-1/4 min-w-[300px] h-1/5 rounded-md group hover:-translate-y-2 cursor-pointer dark:border-gray-800 border-[2px] duration-500">
-                                        <h1 className="text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 font-bold text-xl p-2 mx-2 duration-500">{project[1].title}</h1>
-                                        <p className="text-gray-400 mx-2 px-2 font-medium">{project[1].TechStack}</p>
+                                    <li key={project.title} className="w-1/4 min-w-[300px] h-1/5 rounded-md group hover:-translate-y-2 cursor-pointer dark:border-gray-800 border-[2px] duration-500">
+                                        <h1 className="text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-200 font-bold text-xl p-2 mx-2 duration-500">{project.title}</h1>
+                                        <p className="text-gray-400 mx-2 px-2 font-medium">{project.TechStack}</p>
 
-                                        <p className="text-gray-500 p-2 mx-2 font-medium group-hover:text-gray-800 dark:group-hover:text-gray-200 duration-500">Published At: {project[1].publishOn}</p>
+                                        <p className="text-gray-500 p-2 mx-2 font-medium group-hover:text-gray-800 dark:group-hover:text-gray-200 duration-500">Published At: {project.publishOn}</p>
                                     </li>
                                 ))
                             }
