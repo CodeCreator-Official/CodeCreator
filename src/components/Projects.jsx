@@ -20,9 +20,6 @@ function Projects() {
         fetchProjects()
     }, [])
 
-    console.log(data.map(doc => {return (data.url)})
-
-
 
     return (
         <div className="my-2">
