@@ -14,12 +14,11 @@ function Projects() {
             console.log(error)
         }
     }
-
+ 
 
     useEffect(() => {
         fetchProjects()
     }, [])
-
 
 
     return (

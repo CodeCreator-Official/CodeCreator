@@ -21,8 +21,6 @@ async function getProjects() {
     }
 }
 
-getProjects()
-
 async function getMiniProjects() {
     try {
         const docRef = collection(db, 'Mini Projects')
