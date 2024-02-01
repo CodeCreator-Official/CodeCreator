@@ -47,7 +47,7 @@ function Navbar() {
                         Home
                     </li>
                     <li className="text-3xl p-2 text-gray-300 font-semibold hover:text-yellow-400 duration-200 cursor-pointer">
-                        Code
+                        <a href="https://github.com/CodeCreator-Official">Code</a>
                     </li>
                 </ul>
             </div>
