@@ -22,7 +22,7 @@ function MiniProjects() {
 
             <ul className="my-3 py-5 flex flex-wrap gap-5 w-full max-w-[70rem] justify-center sm:justify-start">
                 {
-                    data.length > 0 ?
+                    !data.length > 0 ?
                         (<>
                             {
                                 data.map((project) => (
@@ -35,7 +35,7 @@ function MiniProjects() {
                                 ))
                             }
                         </>) :
-                        (<div className='w-1/5 min-w-[300px] h-[200px] rounded-md hover:-translate-y-2 cursor-pointer dark:border-gray-800 border-[2px] duration-200 flex items-center justify-center'>
+                        (<div className='w-1/5 min-w-[300px] h-[200px] rounded-md  cursor-pointer dark:border-gray-800 border-[2px] duration-200 flex items-center justify-center'>
                             <h1 className='text-gray-700 text-2xl font-semibold'>Coming Soon ...</h1>
                         </div>)
                 }

@@ -7,15 +7,17 @@ function App() {
 
 
   return (
-    <div className="w-full relative duration-200 dark:bg-slate-950">
-      <Navbar />
+    <div className="w-full dark:bg-slate-950 p-2">
+      <div className="w-[90%] max-w-[1300px] mx-auto relative duration-200 dark:bg-slate-950">
+        <Navbar />
 
-      <section className="flex gap-5 w-full h-full">
-        <Main />
-        <SideBar />
-      </section>
+        <section className="flex gap-5 w-full h-full">
+          <Main />
+          <SideBar />
+        </section>
 
-      <Social />
+        <Social />
+      </div>
     </div>
   )
 }
